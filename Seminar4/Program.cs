@@ -67,24 +67,46 @@
 
 // Написать программу, которая выводит массив из 8ми элементов, заполненный нулями и единицами в случайном порядке
 
-int[] Array()
+// int[] Array()
+// {
+//     int [] arr = new int [8];
+//     for (int i = 0; i < arr.Length; i++)
+//     {
+//         arr[i] = new Random().Next(0,2);
+//     }
+
+//     return arr;
+// }
+// void ShowArray (int[] arr)
+// {
+//     for (int i = 0; i < arr.Length; i++)
+//     {
+//         System.Console.Write($"{arr[i]} ");
+//     }
+// }
+
+
+// ShowArray(Array());
+ 
+//  Сделать массив размера, который укажет пользователь. Заполнить массив случайными числами от 5 до 15
+
+int[] Array(int numb)
 {
-    int [] arr = new int [8];
-    for (int i = 0; i < arr.Length; i++)
+    int [] arr = new int [numb];
+    for (int i = 0; i < numb; i++)
     {
-        arr[i] = new Random().Next(0,2);
+        arr[i] = new Random().Next(5,16);
     }
 
     return arr;
 }
-void ShowArray (int[] arr)
+void ShowArray(int[] arr)
 {
     for (int i = 0; i < arr.Length; i++)
     {
         System.Console.Write($"{arr[i]} ");
     }
 }
-
-
-ShowArray(Array());
- 
+Console.Write("Enter the length of the array: ");
+int size = Convert.ToInt32(Console.ReadLine());
+ShowArray(Array(size));
